@@ -37,6 +37,10 @@ We are glad you have reached this stage & excited to see how you approach the pr
 **Submitting your work**
 
 To submit your finished work:
+- Clone the Master branch of this repo
+    - It will include a README file and a .gitlab-ci.yml file
+    - The README will include all instructions for completing this test
+    - The .gitlab-ci.yml file will have CI/CD steps to run `npm run build` & `npm test` to validate your code builds and unit tests are run & a temporary environment is created for your code so that the ITWox team can review your work
 - please create a branch with your name & role in the format as below:
     - Format: role-fullname
     - Example: reactdeveloper-johndoe
