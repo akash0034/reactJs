@@ -51,4 +51,5 @@ To submit your finished work:
 
 - Follow the standard coding conventions & practises as prescribed for React development
 - Insert code comments if necessary to explain your thinking
+- Ensure proper error handling & logging techniques are followed as per conventions
 - While 80% unit testing coverage is ideal, we are mostly looking for your approach to unit testing rather than a coverage%
