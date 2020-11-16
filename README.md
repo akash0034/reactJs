@@ -19,6 +19,7 @@ We are glad you have reached this stage & excited to see how you approach the pr
     - Should fetch a list of posts & its comments from
         - Posts API - https://jsonplaceholder.typicode.com/posts
         - Comments API - https://jsonplaceholder.typicode.com/comments 
+        - The list of posts can be displayed either as a table or as a list of cards, with a count of its comments
     - List of posts should be paginated to show 10 records with an ability to move to next/previous page
 - Sign In
     - should NOT have a top navigation bar
@@ -45,3 +46,9 @@ To submit your finished work:
     - Format: role-fullname
     - Example: reactdeveloper-johndoe
 - Submit a PR with your code & the relevant comments for your work
+
+**General notes & comments**
+
+- Follow the standard coding conventions & practises as prescribed for React development
+- Insert code comments if necessary to explain your thinking
+- While 80% unit testing coverage is ideal, we are mostly looking for your approach to unit testing rather than a coverage%
