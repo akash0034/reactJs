@@ -5,7 +5,8 @@ We are glad you have reached this stage & excited to see how you approach the pr
 
 **What you will build**
 
-- Create a React app
+- Create a React or React Native or Expo or NextJS app
+- Use Typescript for any of these project types
 - Create 3 screens
 - Home 
     - default landing page 
@@ -21,13 +22,14 @@ We are glad you have reached this stage & excited to see how you approach the pr
         - Comments API - https://jsonplaceholder.typicode.com/comments 
         - The list of posts can be displayed either as a table or as a list of cards, with a count of its comments
     - List of posts should be paginated to show 10 records with an ability to move to next/previous page
+    - Ensure the API URLs are stored in proper environment files as required
 - Sign In
     - should NOT have a top navigation bar
     - should allow the user to enter a username & password (both required fields, username should be an email address)
     - should validate input
     - when user click the "submit" then, it should login & redirect to the "/dashboard" if everything is successful
 - State Management
-    - use Redux or Context API to manage state of the user login
+    - use Redux or MobX or React Context API to manage state of the user login
     - Post sign in, if the screen is refreshed, the user login state should remain
 - Unit Testing
     - write unit tests using any framework of your choice to test the UI components & the client State
