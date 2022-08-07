@@ -1,14 +1,22 @@
 import React from "react";
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Container, Row, Col } from 'react-bootstrap';
+import { ThemeProvider } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 import Screens from "./components/Screens";
-
-const App =()=>{
-    return(
-        <React.Fragment>
-            <Screens/>
-        </React.Fragment>
-    )
-}
+const theme = createTheme({
+  typography: {
+    fontSize: 20,
+    fontFamily: "Helvetica Neue",
+  },
+});
+const App = () => {
+ // all screen imported
+  return (
+    <ThemeProvider theme={theme}>
+      <React.Fragment>
+        <Screens />
+      </React.Fragment>
+    </ThemeProvider>
+  );
+};
 
 export default App;

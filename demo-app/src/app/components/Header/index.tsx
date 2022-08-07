@@ -4,12 +4,27 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import { Link, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { signOut } from "../../redux/slices/userSlice";
+import { useSelector } from "react-redux";
 
-import React, { useState } from "react";
 const Header = () => {
   const location = useLocation();
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state: any) => {
+    return state.isLoggedIn;
+  });
+  const onLogout = () => {
+    dispatch(signOut());
+  };
   return (
-    <AppBar position="static" style={{ background: "#2E3B55" }}>
+    <AppBar
+      position="static"
+      style={{
+        background: "#2E3B55",
+        display: location.pathname === "/sign-in" ? "none" : "flex",
+      }}
+    >
       <Toolbar>
         <IconButton
           size="large"
@@ -22,7 +37,7 @@ const Header = () => {
           ITWOX Demo
         </Typography>
 
-        {location?.pathname !== "/sign-in" && (
+        {!isLoggedIn && (
           <Button
             style={{ color: "#FFFFFF", fontSize: 18 }}
             component={Link}
@@ -32,13 +47,33 @@ const Header = () => {
           </Button>
         )}
 
-        {location?.pathname !== "/home" && (
+        {location?.pathname === "/" && (
           <Button
             style={{ color: "#FFFFFF", fontSize: 18 }}
             component={Link}
             to="/dashboard"
           >
             Dashboard
+          </Button>
+        )}
+        {location?.pathname === "/dashboard" && (
+          <Button
+            style={{ color: "#FFFFFF", fontSize: 18 }}
+            component={Link}
+            to="/"
+          >
+            Home
+          </Button>
+        )}
+
+        {location?.pathname !== "/sign-in" && (
+          <Button
+            style={{ color: "#FFFFFF", fontSize: 18 }}
+            component={Link}
+            to="/sign-in"
+            onClick={onLogout}
+          >
+            Sign out
           </Button>
         )}
       </Toolbar>

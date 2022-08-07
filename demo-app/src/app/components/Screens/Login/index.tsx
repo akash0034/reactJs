@@ -6,22 +6,38 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { signIn } from "../../../redux/slices/userSlice";
+
 const theme = createTheme();
 
 export default function Login() {
-  const [info, setValue] = useState<object>({
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [info, setValue] = useState({
     email: "",
     password: "",
   });
+
+
+  // to handle onInputChange 
   const onChange = (event: any) => {
     event.preventDefault();
+    // setState against the input filed name
     setValue({
       ...info,
       [event?.target?.name]: event.target.value,
     });
   };
 
-  const handleSubmit = () => {};
+
+  // to Store userSession 
+  const handleSubmit = () => {
+    const { email, password } = info;
+    dispatch(signIn({ email, password }));
+    navigate("/");
+  };
 
   return (
     <ThemeProvider theme={theme}>
